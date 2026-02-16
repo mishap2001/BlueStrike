@@ -910,7 +910,6 @@ echo -e "${GREEN}${BOLD}----------------------------------------------------${EN
 }
 
 MANUAL
-NET_INFO
 ANON
 MENU
 
