@@ -231,7 +231,7 @@ IP=$(curl -s ifconfig.co) # real IP address
 GPS=$(geoiplookup "$IP" | awk '{print $4, $5, $6}') # real location 
 
 if geoiplookup "$IP" | grep -iq israel; then
-echo -ne "[*] You are not anonymous. Would yo like to become one? (Y/N)" 
+echo -ne "[*] You are not anonymous. Would yo like to become one? (Y/N) " 
 echo "$(date) - User is not anonymous" >> /var/log/BlueStrike.log		
 while true; do
 read -r answer
