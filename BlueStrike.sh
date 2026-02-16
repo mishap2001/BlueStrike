@@ -888,7 +888,7 @@ echo
 echo -ne "${YELLOW}[*]${ENDCOLOR} Please enter a password to spray: "
 read -r pass
 echo
-echo -e "${RED}${BOLD}[!]${ENDCOLOR} Commencing Password Spraying attack"
+echo -e "${RED}${BOLD}[!] Commencing Password Spraying attack${ENDCOLOR}"
 echo -e "${RED}${BOLD}----------------------------------------------------${ENDCOLOR}"
 open_ports=$(grep open 192.168.178.134 | awk -F/ '{print $1}')
 for p in 21 22 445; do
