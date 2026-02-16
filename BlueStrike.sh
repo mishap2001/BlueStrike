@@ -623,7 +623,7 @@ echo "$(date) - Found available ports" >> /var/log/BlueStrike.log # log
 open_ports=$(grep open 192.168.178.134 | awk -F '/' '{print $1}')
 echo
 echo -e "${YELLOW}[*]${ENDCOLOR} The next ports are available:"
-echo -e "    ${YELLOW}$open_ports${ENDCOLOR}"
+echo -e "${YELLOW}$open_ports${ENDCOLOR}"
 echo
 echo -e "${YELLOW}[*]${ENDCOLOR} Choose a port to attack"
 echo
