@@ -286,35 +286,43 @@ echo -e "${MAGENTA}[2]${ENDCOLOR} Man-in-the-Middle (MiTM)"
 echo -e "${MAGENTA}[3]${ENDCOLOR} Denial of Service (DoS)"
 echo -e "${MAGENTA}[4]${ENDCOLOR} Brute Force (BF)"
 echo -e "${MAGENTA}[5]${ENDCOLOR} Password Spraying"
+echo -e "${MAGENTA}[6]${ENDCOLOR} Exit"
 echo
 echo -ne "${BOLD}Select an attack to simulate:${ENDCOLOR} "
 read -r attack_choice
+echo
+
 case "$attack_choice" in
-	1)
-		ENUM
-		break
-	;;
-	2)
-		ARP
-		break
-	;;
-	3)
-		DoS
-		break
-	;;
-	4)
-		BF
-		break
-	;;
-	5)
-		PS
-		break
-	;;
-	*)
-		echo -e "${RED}Invalid input${ENDCOLOR}"
-		echo -e "${RED}Choose from the available options${ENDCOLOR}"
-		echo
-	;;
+    1) ENUM ;;
+    2) ARP ;;
+    3) DoS ;;
+    4) BF ;;
+    5) PS ;;
+    6)
+        echo -e "${GREEN}Exiting BlueStrike...${ENDCOLOR}"
+        exit 0
+    ;;
+    *)
+        echo -e "${RED}Invalid input${ENDCOLOR}"
+        echo -e "${RED}Choose from the available options${ENDCOLOR}"
+        echo
+    ;;
+esac
+
+echo
+echo -ne "${BOLD}Simulate another scenario? (Y/N): ${ENDCOLOR}"
+read -r again
+case "$again" in
+    y|Y) clear ;;
+    n|N)
+        echo -e "${GREEN}Exiting BlueStrike...${ENDCOLOR}"
+        exit 0
+    ;;
+    *)
+        echo -e "${RED}Invalid input. Returning to menu...${ENDCOLOR}"
+        sleep 1
+        clear
+    ;;
 esac
 done
 }
