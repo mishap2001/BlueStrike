@@ -299,6 +299,7 @@ case "$attack_choice" in
     4) BF ;;
     5) PS ;;
     6)
+		echo
         echo -e "${GREEN}Exiting BlueStrike...${ENDCOLOR}"
         exit 0
     ;;
@@ -799,7 +800,7 @@ fi
 done
 echo
 echo -e "${YELLOW}[*]${ENDCOLOR} Creating a password list..."
-crunch 1 3 -o pass.lst 2>/dev/null
+crunch 4 4 012345 -o pass.lst 2>/dev/null
 echo
 echo "$(date) - Brute-Force attack initialized" >> /var/log/BlueStrike.log # log
 echo -e "${RED}${BOLD}[!] Commencing a Brute-Force attack${ENDCOLOR}"
